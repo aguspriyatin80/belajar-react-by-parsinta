@@ -20,6 +20,9 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink activeClassName="text-bold" className="nav-link" to="/contact">Contact</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink activeClassName="text-bold" className="nav-link" to="/users">Users</NavLink>
+                        </li>
 
                     </ul>
 
