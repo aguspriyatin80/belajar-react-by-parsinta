@@ -6,10 +6,13 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ClassExample from './components/ClassExample'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/* <ClassExample /> */}
+
   </React.StrictMode>,
   document.getElementById('root')
 );
