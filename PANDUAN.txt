@@ -1,0 +1,6 @@
+# intall nodejs
+# install yarn (alternatif npm)
+npm install -g yarn
+# intall react
+npx create-react-app first-app
+
