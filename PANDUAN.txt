@@ -17,3 +17,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 Module not found: Can't resolve '@popperjs/core' in '/home/agus/Documents/github/belajar-react-by-parsinta/first-app/node_modules/bootstrap/dist/js'
 # maka install '@popperjs/core'
 yarn add @popperjs/core
+
+PART 7 : REACT ROUTER
+# instal react-router-dom
+yarn add react-router-dom
+# create folder router
+# create file index.js in folder router

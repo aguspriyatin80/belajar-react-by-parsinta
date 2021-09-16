@@ -17,23 +17,27 @@ class App extends React.Component {
     submitHandler = (e) => {
         e.preventDefault()
 
-        if (document.userForm.firstname.value == '') {
+        if (document.userForm.firstname.value === '') {
             alert('firstname required')
             document.userForm.firstname.focus()
             return
-        } else if (document.userForm.lastname.value == '') {
+        } else if (document.userForm.lastname.value === '') {
             alert('lastname required')
             document.userForm.lastname.focus()
             return
         }
 
         this.setState({
-            name: `${this.state.firstname} ${this.state.lastname}`
+            name: `${this.state.firstname} ${this.state.lastname}`,
+
         }
         )
 
-        this.state.firstname = ''
-        this.state.lastname = ''
+        this.setState({
+            firstname: '',
+            lastname: ''
+        })
+
         document.userForm.firstname.focus()
     }
     render() {
