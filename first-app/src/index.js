@@ -7,9 +7,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ClassExample from './components/ClassExample'
+import Card from './components/CardProps';
 
 ReactDOM.render(
   <React.StrictMode>
+
     <App />
     {/* <ClassExample /> */}
 

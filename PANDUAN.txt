@@ -12,4 +12,8 @@ yarn add bootstrap@next popper.js
 # import bootstrap in index.js
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
-
+# jika ditemukan error seperti ini:
+./node_modules/bootstrap/dist/js/bootstrap.esm.js
+Module not found: Can't resolve '@popperjs/core' in '/home/agus/Documents/github/belajar-react-by-parsinta/first-app/node_modules/bootstrap/dist/js'
+# maka install '@popperjs/core'
+yarn add @popperjs/core
