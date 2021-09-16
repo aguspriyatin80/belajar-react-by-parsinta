@@ -8,13 +8,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from './views/Home'
 import About from './views/About'
 import Navbar from './components/Navbar'
+import Login from './views/auth/Login'
 function App() {
     return (
         // <CardProps />
         // <FetchData />
         // <FetchSatuData />
         <BrowserRouter >
-            <Navbar />
             <Router />
         </BrowserRouter>
 
