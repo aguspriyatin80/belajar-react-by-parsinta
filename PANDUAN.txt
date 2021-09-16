@@ -1,6 +1,15 @@
 # intall nodejs
 # install yarn (alternatif npm)
 npm install -g yarn
-# intall react
+# install react
 npx create-react-app first-app
+# install axios for fetching API
+yarn add axios
+# dont' forget to import axios in App.js
+import axios from 'axios'
+# install bootstrap
+yarn add bootstrap@next popper.js
+# import bootstrap in index.js
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
 
