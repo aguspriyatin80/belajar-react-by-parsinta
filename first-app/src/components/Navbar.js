@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { UserProvider } from '../views/context/User'
+import AuthenticatedUser from './AuthenticatedUser'
 
 export default function Navbar() {
     return (
@@ -10,7 +12,7 @@ export default function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item">
                             <NavLink exact activeClassName="text-bold" className="nav-link" to="/">Home</NavLink>
                         </li>
@@ -34,6 +36,14 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/login">Login</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/">
+                                <UserProvider>
+                                    <AuthenticatedUser />
+                                </UserProvider>
+                            </NavLink>
+                        </li>
+
                     </ul>
                 </form>
             </div>
