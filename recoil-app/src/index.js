@@ -9,6 +9,7 @@ import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { Suspense } from 'react';
 
+
 ReactDOM.render(
   <RecoilRoot>
     <Suspense fallback="Loading...">
