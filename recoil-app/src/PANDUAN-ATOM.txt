@@ -1,0 +1,60 @@
+REQUIREMENT
+# pastikan sudah terinstal react-router-dom, axios, recoil
+
+1) Buat atom
+import { atom } from "recoil";
+
+const theme = atom({
+  key: "my-theme",
+  default: "dark"
+});
+
+export { theme };
+
+
+2) Panggil di komponen
+// import "./styles.css";
+
+import { useRecoilState } from "recoil";
+import { theme } from "./Theme";
+
+export default function Home() {
+  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
+  const defaultTheme =
+    currentTheme == "dark" ? "bg-dark text-light" : "bg-light text-dark";
+  const handleChange = (e) => {
+    setCurrentTheme(e.target.value);
+  };
+  return (
+    <div className={`${defaultTheme}`}>
+      <select className="form form-control" onChange={handleChange}>
+        <option>Select ...</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+      <div>Hello World</div>
+      I'm {currentTheme}
+    </div>
+  );
+}
+
+3. Edit file utama index.js
+import { StrictMode, Suspense } from "react";
+import ReactDOM from "react-dom";
+import { RecoilRoot } from "recoil";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <RecoilRoot>
+    <Suspense fallback={Loading ... }>
+      <BrowserRouter>
+        <StrictMode>
+          <App />
+        </StrictMode>
+      </BrowserRouter>
+    </Suspense>
+  </RecoilRoot>,
+  rootElement
+);

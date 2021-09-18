@@ -1,0 +1,55 @@
+REQUIREMENT
+# pastikan sudah terinstal react-router-dom, axios, recoil
+
+1) Buat selector
+import axios from 'axios'
+import {selector} from 'recoil'
+
+const authUser = selector({
+  key:'auth-user',
+  get:async ()=>{
+    let user = null
+    try{
+      let{data} = await axios.get('https://jsonplaceholder.typicode.com/users/1')
+        user = {user:data}
+    } catch (e){
+      user = {user:e.message}
+    }
+    return user;
+  }
+
+
+})
+export {authUser}
+
+2) Panggil di komponen
+// import "./styles.css";
+
+import { useRecoilValue } from "recoil";
+import { authUser } from "./store";
+
+export default function Home() {
+  const { user } = useRecoilValue(authUser);
+  return <div>{user.name}</div>;
+}
+
+3. Edit file utama index.js
+import { StrictMode, Suspense } from "react";
+import ReactDOM from "react-dom";
+import { RecoilRoot } from "recoil";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <RecoilRoot>
+    <Suspense fallback={Loading ... }>
+      <BrowserRouter>
+        <StrictMode>
+          <App />
+        </StrictMode>
+      </BrowserRouter>
+    </Suspense>
+  </RecoilRoot>,
+  rootElement
+);
