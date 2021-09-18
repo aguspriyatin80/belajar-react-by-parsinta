@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../views/context/User';
-import '../custom.css'
+// import '../custom.css'
 function AuthenticatedUser(props) {
     const { user, loading } = useContext(UserContext)
     return (
